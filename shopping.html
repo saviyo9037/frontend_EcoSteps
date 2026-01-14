@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <title>Document</title>
+      <style>
+        body {
+          font-family: 'Poppins', sans-serif;
+          background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+          color: #333;
+          margin: 0;
+          padding: 0;
+        }
+
+        .navbar {
+          background: rgba(0, 123, 85, 0.9) !important;
+          backdrop-filter: blur(10px);
+          border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-section {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 4rem 0;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .hero-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: url('image/first_page_background.png') no-repeat center center;
+          background-size: cover;
+          opacity: 0.3;
+          z-index: 1;
+        }
+
+        .hero-section .container {
+          position: relative;
+          z-index: 2;
+        }
+
+        h1 {
+          font-size: 3rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+          font-size: 1.25rem;
+          margin-bottom: 2rem;
+          opacity: 0.9;
+        }
+
+        .card-grid {
+          padding: 5rem 0;
+          background: rgba(255,255,255,0.95);
+        }
+
+        .card {
+          border: none;
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+          transition: all 0.3s ease;
+          overflow: hidden;
+          background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+          cursor: pointer;
+          height: 100%;
+        }
+
+        .card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .card img {
+          height: 200px;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+
+        .card:hover img {
+          transform: scale(1.05);
+        }
+
+        .card-body {
+          padding: 1.5rem;
+          text-align: center;
+        }
+
+        .card-title {
+          font-size: 1.25rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          color: #2e8b57;
+        }
+
+        .card-text {
+          color: #666;
+          margin-bottom: 1rem;
+        }
+
+        .eco-info {
+          background: #e8f5e8;
+          border-left: 4px solid #28a745;
+          padding: 0.75rem;
+          margin-top: 1rem;
+          border-radius: 8px;
+          font-weight: 500;
+          color: #155724;
+        }
+
+        .back-btn {
+          margin-top: 3rem;
+        }
+
+        .btn-outline-warning {
+          border-radius: 25px;
+          padding: 0.75rem 2rem;
+          font-weight: 600;
+          transition: all 0.3s ease;
+        }
+
+        .btn-outline-warning:hover {
+          transform: scale(1.05);
+          box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+        }
+
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 2rem;
+          }
+          .subtitle {
+            font-size: 1rem;
+          }
+          .card-body {
+            padding: 1rem;
+          }
+          .card img {
+            height: 150px;
+          }
+        }
+      </style>
+</head>
+<body>
+  <div class="box">
+  
+      <div class="overlay">
+ <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="EcoSteps.html">EcoSteps</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="shopping.html">Shopping</a></li>
+            <li class="nav-item"><a class="nav-link" href="water.html">Water</a></li>
+            <li class="nav-item"><a class="nav-link" href="energy.html">Energy</a></li>
+          <li class="nav-item"><a class="nav-link" href="waste/abhina_page4.html">Waste</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+           <h1 class=" rounded p-2 text-dark text-center" style="background-color: #eef3f4;">
+  Sustainable Shopping Guide
+</h1>
+    <div class="container">
+        <div class="text-center">
+   
+
+            <h3  class="text-capitalize mt-5  ">Click on a product to learn how it's eco-friendly</h3>
+
+        </div>
+    
+<div class=" row row-cols-1 row-cols-md-3 mt-3 ">
+      <div class="col g-3">
+              <div class="card text-center shadow-sm ">
+            <div class="card-body h-100"> 
+                <img src="image/waterbottle.png" alt="" style="width: 100px;">
+                <h2 class="text-capitalize">reusable water bottle</h2>
+            <p class="text-capitalize"> use it daily and help reduce plastic waste</p></div>
+       
+        </div>
+    </div> 
+   <div class="col g-3">
+              <div class="card text-center shadow-sm ">
+          
+            <div class="card-body h-100"> 
+                <img src="image/grocery_bag.png" alt="" style="width: 100px;">
+                <h2 class="text-capitalize mt-4">cloth grocery bag</h2>
+            <p class="text-capitalize mt-3"> carry it when shopping instead of plastic bags</p></div>
+       </div>
+        </div>
+
+
+
+  <div class="col g-3">
+              <div class="card text-center shadow-sm">
+            <div class="card-body h-100"> 
+                <img src="image/solar_powerbank.png" alt="" style="width: 100px;">
+                <h2 class="text-capitalize">solar power bank</h2>
+            <p class="text-capitalize">charge your device sustainably using the sun</p></div>
+       
+        </div>
+    </div> 
+  <div class="col g-3">
+              <div class="card text-center shadow-sm">
+            <div class="card-body h-100"> 
+                <img src="image/straw.png" alt="" style="width: 100px;">
+                <h2 class="text-capitalize">metal straw set</h2>
+            <p class="text-capitalize"> durable and easy to clean</p></div>
+       
+        </div>
+    </div> 
+
+
+   <div class="col g-3">
+              <div class="card text-center shadow-sm">
+            <div class="card-body h-100"> 
+                <img src="image/notebook.png" alt="" style="width: 100px;">
+                <h2 class="text-capitalize mt-4">eco-friendly notebook</h2>
+            <p class="text-capitalize mt-3"> write without harming trees</p></div>
+       
+        </div>
+    </div> 
+
+
+      <div class="col g-3">
+              <div class="card text-center shadow-sm">
+            <div class="card-body h-100"> 
+                <img src="image/bulb.png" alt="" style="width: 100px;">
+                <h2 class="text-capitalize mt-">led bulb</h2>
+            <p class="text-capitalize"> bright and energy-efficient choice</p></div>
+       
+        </div>
+    </div> 
+    </div>
+    <div class="text-center mt-5">
+      <a href="EcoSteps.html" class="btn btn-outline-warning"> Back to Home</a>
+    </div>
+      </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="shopping_js/shopping.js"></script>
+</body>
+</html>

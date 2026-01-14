@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ecosteps: Everyday Sustainability</title>
+  <style>
+    *{
+      list-style: none;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url( https://static.vecteezy.com/system/resources/previews/022/448/341/large_2x/save-earth-environment-day-poster-go-green-ai-generative-background-images-save-water-free-photo.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: #333;
+
+    }
+
+    header {
+      background-color: #2e8b57;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .items{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .category {
+      
+      background-color: #ffffff;
+      border-left: 6px solid #2e8b57;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+      width: 250px;
+      height: 300px;
+    }
+    .home{
+      background-image: url(https://thearchitecturedesigns.com/wp-content/uploads/2023/12/Architectural-Tips-to-Consider-for-an-Energy-Efficient-Home-4-1024x731.jpeg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+ .kitchen{
+  background-image: url(https://decorcrowd.com/wp-content/uploads/2024/04/Different_color_temperatures_of_LED_lights_for_various_kitchen_zones-683x1024.webp);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+ }
+
+ .laundry{
+      background-image: url(https://thumbs.dreamstime.com/b/modern-laundry-room-energy-efficient-washing-machine-design-bright-laundry-area-features-washing-machine-wind-363855726.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+ }
+ .office{
+   background-image: url(https://www.energyaustralia.com.au/sites/default/files/styles/full_image/public/2017-01/energy-saving-tips-your-office.jpg?itok=7Slnhd7Y);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+ }
+ .travel{
+      background-image: url(https://welcomeenergy.co.uk/wp-content/uploads/2020/06/energy.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+ }
+    .category h2 {
+      margin-top: 0;
+      color: #2e8b57;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tips {
+      display: none;
+      padding-top: 10px;
+      background: floralwhite;
+      padding-right: 9px;
+      padding-bottom: 4px;
+      border-radius: 5px;
+      border: 1px solid gray;
+    }
+
+    .outlier {
+      background-image: url(https://thumbs.dreamstime.com/z/solar-panel-factory-rooftop-wind-turbine-beautiful-blue-sky-background-290024579.jpg?w=576);
+      border-left: 6px solid #d9534f;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #2e8b57;
+      color: white;
+      margin-top: 30px;
+    }
+
+    .search-box {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    #scrollTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: none;
+      background-color: #2e8b57;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    @media screen and (max-width: 600px) {
+      section {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ecosteps: Everyday Sustainability</h1>
+    <p>Simple energy-saving actions for a better tomorrow</p>
+  </header>
+
+  <section>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search energy-saving tips...">
+    </div>
+
+    <div class="item">
+      <div class="items">
+            <div class="category home" onclick="toggleTips(this)">
+      <h2>🏠 Home </h2>
+      <ul class="tips">
+        <li>💡 Switch to LED Bulbs</li>
+        <li>🔌 Unplug Idle Electronics</li>
+        <li>🪟 Use Natural Light</li>
+        <li>🛏️ Turn Off Lights When Not Needed</li>
+        <li>🧊 Insulate Your Home</li>
+      </ul>
+    </div>
+
+    <div class="category kitchen" onclick="toggleTips(this)">
+      <h2>🍳 Kitchen</h2>
+      <ul class="tips">
+        <li>🍽️ Use Microwave Instead of Oven</li>
+        <li>🔥 Cover Pots While Cooking</li>
+        <li>🧊 Use Energy-Efficient Appliances</li>
+      </ul>
+    </div>
+    <div class="category laundry" onclick="toggleTips(this)">
+      <h2>🧺 Laundry </h2>
+      <ul class="tips">
+        <li>🧼 Wash with Cold Water</li>
+        <li>🌞 Line Dry Clothes</li>
+        <li>🧽 Clean Dryer Lint Filter Regularly</li>
+      </ul>
+    </div>
+      </div>
+      <div class="items">
+            <div class="category office" onclick="toggleTips(this)">
+      <h2>🧑‍💻 Office / Study Room</h2>
+      <ul class="tips">
+        <li>🖥️ Use Power Saving Mode</li>
+        <li>🔌 Smart Power Strips</li>
+      </ul>
+    </div>
+
+    <div class="category travel" onclick="toggleTips(this)">
+      <h2>🚗 Travel</h2>
+      <ul class="tips">
+        <li>🚶‍♀️ Walk or Bike Short Distances</li>
+        <li>🚙 Carpool When Possible</li>
+        <li>🚌 Use Public Transport</li>
+      </ul>
+    </div>
+
+    <a href="https://www.youtube.com/watch?v=DvkabsJn6uo" target="_blank" style="text-decoration: none;">
+      <div class="category outlier">
+        <h2>🚫 Outlier Tip</h2>
+        <p>💨 <strong>Install a Rooftop Wind Turbine</strong> — While renewable, it's costly, impractical for daily life, and doesn't fit the goal of simple, everyday actions.</p>
+      </div>
+    </a>
+
+    </div>
+      </div>  
+
+    
+
+    
+    
+  </section>
+
+  <footer>
+    &copy; 2025 Ecosteps | Built for a greener future
+  </footer>
+
+  <button id="scrollTop" onclick="scrollToTop()">⬆️</button>
+
+  <script>
+    function toggleTips(categoryDiv) {
+      const tips = categoryDiv.querySelector(".tips");
+      const toggleIcon = categoryDiv.querySelector("span");
+      const isOpen = tips.style.display === "block";
+
+      tips.style.display = isOpen ? "none" : "block";
+      toggleIcon.textContent = isOpen ? "➕" : "➖";
+    }
+
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const filter = this.value.toLowerCase();
+      const tipsLists = document.querySelectorAll(".tips li");
+
+      tipsLists.forEach(function (tip) {
+        const text = tip.textContent.toLowerCase();
+        tip.style.display = text.includes(filter) ? "" : "none";
+      });
+    });
+
+    window.onscroll = function () {
+      const scrollBtn = document.getElementById("scrollTop");
+      scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>
