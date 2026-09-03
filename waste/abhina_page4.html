@@ -3,175 +3,432 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waste Management</title>
+  <title>Waste Management & Circular Solutions | EcoSteps</title>
+  <meta name="description" content="Master the waste management hierarchy, safe e-waste and bio-waste handling, and use the interactive 'What Goes Where?' sorting engine.">
+
+  <!-- Stylesheets -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="page4.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="page4.css">
+  <link rel="icon" type="image/png" href="../image/echosteps.png">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="../EcoSteps.html">EcoSteps</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+
+  <!-- Top Sticky Navigation -->
+  <nav class="navbar navbar-expand-lg eco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="../EcoSteps.html">
+        <span class="brand-badge">🌿</span>
+        <span>EcoSteps</span>
+      </a>
+      <div class="d-flex align-items-center d-lg-none gap-2">
+        <div class="nav-streak-pill">🔥 <span>3 Day Streak</span></div>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="../EcoSteps.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="../shopping.html">Shopping</a></li>
           <li class="nav-item"><a class="nav-link" href="../water.html">Water</a></li>
           <li class="nav-item"><a class="nav-link" href="../energy.html">Energy</a></li>
           <li class="nav-item active"><a class="nav-link" href="abhina_page4.html">Waste</a></li>
         </ul>
+        <div class="ms-lg-3 d-none d-lg-block">
+          <div class="nav-streak-pill" title="Daily Sustainability Streak">🔥 <span>3 Day Streak</span></div>
+        </div>
       </div>
     </div>
   </nav>
-    <div class="line"></div>
-    <div class="image-container">
-    <img src="page4_images/top_pic.png" alt="Top Banner Image">
+
+  <!-- Hero Header with Banner Card -->
+  <header class="page-hero text-center position-relative">
+    <div class="container position-relative" style="z-index: 2;">
+      <span class="badge-eco badge-eco-purple mb-3">♻️ Circular Lifecycle</span>
+      <h1 class="display-5 font-weight-bold mb-3">Waste Management & Recycling</h1>
+      <p class="lead mb-4">
+        Transitioning from a linear "take-make-dispose" mindset into a closed-loop circular economy where waste is transformed into valuable resources.
+      </p>
+
+      <!-- Top Visual Banner Card -->
+      <div class="waste-hero-img-wrap mb-4">
+        <img src="page4_images/top_pic.png" alt="Waste Management and Circular Economy" class="img-fluid">
+        <div class="waste-hero-overlay text-start">
+          <span class="badge-eco badge-eco-green mb-2">Cradle-to-Grave Stewardship</span>
+          <h2 class="h3 font-weight-bold text-white mb-1">Rethinking Rubbish as a Valuable Resource</h2>
+          <p class="small text-white-50 mb-0 d-none d-md-block">
+            Managing waste effectively prevents soil contamination, cuts greenhouse gas emissions, and preserves pristine ecosystems.
+          </p>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <div class="line"></div>
-
+  <!-- Interactive "What Goes Where?" Sorter Engine Section -->
+  <section class="py-5" style="background: white; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
     <div class="container">
-    <h2>What is Waste Management?</h2>
-    <p>
-        Waste management refers to the processes involved in managing waste from cradle to grave. This includes the collection, transportation, disposal/recycling, and monitoring of waste materials produced as a result of human activity.
-    </p>
-    <p>
-        Waste management encompasses all types of waste, such as household, industrial, and hazardous. Waste can also be solid, liquid, or gas, each of which has its own methods of management and disposal.
-    </p>
-    <p>
-        The whole purpose of waste management is to reduce the amount of waste that goes into landfill. Instead, rubbish should be seen as a valuable resource.
-    </p>
-    <br>
-    <h2>Statistics Related to Waste Management in India </h2>
-    <p>India produces 62 million tonnes of waste per year, and out of this, only 70% are collected. Surveys have revealed that only 12 million tonnes of these wastes are treated, while 31 million tonnes of waste are being used in landfills. </p>
-    <p>The overall generation of municipal solid waste is estimated to increase to 165 million tonnes by 2030 due to the changing patterns of consumption and also rapid growth in the economy.</p>
-   <br>
-   <h2>The Rise of Holistic Waste Management Practices</h2>
-   <div class="line2"></div>
-   <br>
-   <img src="page4_images/approach.png">
-   <p>Waste management today is a complex topic, and the operational practices of transporting and processing waste differ widely between cities, nations and across continents.</p>
+      <div class="text-center max-w-700 mx-auto mb-4">
+        <span class="badge-eco badge-eco-green mb-2">Interactive Smart Sorter</span>
+        <h2 class="h2 font-weight-bold">"What Goes Where?" Quick Lookup</h2>
+        <p class="text-muted small">Not sure how to dispose of an item? Type any household object below to reveal its exact bin, prep steps, and recyclability score.</p>
+      </div>
 
-<p>However, efforts have been made to dissect the problem and build a framework that divides the broad types of waste management into a hierarchical system. This system endeavors to cover the entire lifecycle of a product and extract the maximum potential benefits from any waste.</p>
+      <!-- Search Input -->
+      <div class="search-filter-wrapper mb-4">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="wasteSearchInput" placeholder="Try typing 'battery', 'pizza box', 'bottle', 'coffee'...">
+      </div>
 
-<p>As a result, types of waste management are usually split into three categories based upon the now famous “3Rs” — Reduce, Reuse, Recycle. Unfortunately, however, this concept only targets best practice waste management systems by offering guidance on the ideal ways in which waste can be repurposed for minimal impact on the environment. In reality, there are waste materials that cannot be processed using this program, and for certain waste products, an impasse is all too often reached. With these issues in mind, the waste management hierarchy can be extended to include the following concepts.</p>
-
-The waste management hierarchy is a strategic framework designed to guide sustainable waste practices, ranking them from most to least preferred. Each step plays a crucial role in reducing the environmental impact of waste and promoting efficient resource use.
-
-<h3>Prevention</h3>
-<p>Prevention is the most preferred option in waste management. It aims to stop waste from being created in the first place. This involves designing products and systems in a way that reduces material use, increases efficiency, and eliminates unnecessary packaging. For example, choosing digital documents over printed ones, avoiding single-use plastics, or buying long-lasting, quality items instead of disposable alternatives are all preventive actions. When waste is not created, there’s no need to manage it — making prevention the most sustainable choice.
-</p>
-<h3>Minimisation</h3>
-<p>When prevention is not entirely possible, the next best step is minimisation. This means reducing the amount or toxicity of waste generated. It involves making informed decisions that reduce excess material use during production and consumption. An example of minimisation is purchasing products in bulk to avoid small packaging, using concentrated cleaning products to reduce container waste, or opting for materials that are biodegradable or less hazardous. This step helps lower the volume of waste needing further treatment.
-</p>
-<h3> Reuse</h3>
-<p>Reusing means extending the life of products by using them multiple times before discarding. It emphasizes creativity and resourcefulness in keeping items in circulation for as long as possible. For example, glass jars can be reused for storage, old clothes can be repurposed into cleaning rags, and worn-out furniture can be refurbished instead of thrown away. Reuse reduces the demand for new products, conserves raw materials, and prevents items from ending up in landfills.
-</p>
-<h3>Recycling</h3>
-<p>Recycling involves processing waste materials to make new products, thereby diverting them from landfills. Common recyclable materials include paper, plastic, glass, and metals. For instance, used paper can be turned into recycled notebooks, plastic bottles can become synthetic fabrics, and scrap metal can be melted down to produce new tools. While recycling is beneficial, it still consumes energy and requires sorting and cleaning of materials. It is a good practice, but not as efficient as prevention or reuse.
-</p>
-<h3>Energy Recovery</h3>
-<p>If waste cannot be reused or recycled, energy recovery is the next option. This process extracts usable energy from waste through methods like incineration, gasification, or anaerobic digestion. For example, organic food waste can be broken down to produce biogas, while non-recyclable plastics can be burned in waste-to-energy plants to generate electricity. While it reduces waste volume and recovers some value, it can also produce emissions and should be used cautiously.
-</p>
-<h3>Disposal</h3>
-<p>Disposal is the least preferred option in the hierarchy and is only considered when all other options are not feasible. It includes methods such as landfilling and incineration without energy recovery. Disposal has significant negative environmental impacts, including soil and water pollution, methane emissions, and long-term land use. For this reason, sustainable waste systems strive to minimize disposal and prioritize the higher steps of the hierarchy.
-
-</p>
-
-
-<h2>🧭 Guide According to the Nature of Waste</h2>
-<p>Select the type of waste to learn how to handle it responsibly:</p>
-
-  <div class="guide-container">
-
-    <div class="waste-box" onclick="toggleSteps(this)">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPDXunkOExeUuLgDVKn7k_bZ4Il8JqmDJdAA&s" >
-      <div class="label">Bio-Waste</div>
-      <div class="steps">
-        <ul>
-          <li>Separate food and garden waste from general trash.</li>
-          <li>Use compost bins for organic matter.</li>
-          <li>Avoid mixing with plastic or metal.</li>
-          <li>Use compost as fertilizer in gardens.</li>
-        </ul>
+      <!-- Live Search Results Grid -->
+      <div class="row" id="wasteSearchResults">
+        <!-- Rendered dynamically by js/waste-sorter.js -->
       </div>
     </div>
+  </section>
 
-    <div class="waste-box" onclick="toggleSteps(this)">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqScraHdFZmy2CWN8VRThG5j4qq0EArefqZA&s alt="Plastic Waste">
-      <div class="label">Plastic Waste</div>
-      <div class="steps">
-        <ul>
-          <li>Clean and dry plastic before disposal.</li>
-          <li>Separate recyclable plastics (PET, HDPE).</li>
-          <li>Avoid single-use plastics whenever possible.</li>
-          <li>Drop off at a certified recycling center.</li>
-        </ul>
+  <!-- National & Global Statistics Section -->
+  <section class="py-5" style="background: #f8fafc;">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-5">
+          <span class="badge-eco badge-eco-amber mb-2">The Scale of the Challenge</span>
+          <h2 class="h2 font-weight-bold mb-3">Waste Dynamics & Urgent Needs</h2>
+          <p class="text-muted small mb-3">
+            In India alone, approximately <strong>62 million tonnes</strong> of municipal solid waste is generated every year. Rapid urbanization and changing consumption patterns are projected to escalate this figure to <strong>165 million tonnes by 2030</strong>.
+          </p>
+          <p class="text-muted small mb-0">
+            Segregation at the source by individuals is the single most critical factor determining whether materials can be treated or end up in hazardous open landfills.
+          </p>
+        </div>
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="stat-pill-box">
+                <div class="h2 font-weight-bold text-dark mb-1">62 MT</div>
+                <div class="small text-muted font-weight-bold">Annual Waste Generated</div>
+                <div class="progress mt-2" style="height: 6px;">
+                  <div class="progress-bar bg-success" style="width: 100%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-pill-box">
+                <div class="h2 font-weight-bold text-primary mb-1">70%</div>
+                <div class="small text-muted font-weight-bold">Collected from Sources</div>
+                <div class="progress mt-2" style="height: 6px;">
+                  <div class="progress-bar bg-primary" style="width: 70%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-pill-box">
+                <div class="h2 font-weight-bold text-danger mb-1">31 MT</div>
+                <div class="small text-muted font-weight-bold">Dumped in Landfills</div>
+                <div class="progress mt-2" style="height: 6px;">
+                  <div class="progress-bar bg-danger" style="width: 50%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-pill-box">
+                <div class="h2 font-weight-bold text-success mb-1">12 MT</div>
+                <div class="small text-muted font-weight-bold">Effectively Treated</div>
+                <div class="progress mt-2" style="height: 6px;">
+                  <div class="progress-bar bg-success" style="width: 20%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="waste-box" onclick="toggleSteps(this)">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe_oHvDfCn8rWCDFuH8hBNeVAZiFa1lCJvrA&s" alt="E-Waste">
-      <div class="label">E-Waste</div>
-      <div class="steps">
-        <ul>
-          <li>Don’t throw e-waste in regular bins.</li>
-          <li>Back up data and remove batteries.</li>
-          <li>Deposit at authorized e-waste collection points.</li>
-          <li>Explore repair or donation before recycling.</li>
-        </ul>
+  <!-- The 6-Stage Waste Hierarchy Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge-eco badge-eco-green mb-2">Holistic Framework</span>
+        <h2 class="h2 font-weight-bold">The Extended Waste Management Hierarchy</h2>
+        <p class="text-muted small">Moving beyond the basic 3Rs into a comprehensive lifecycle hierarchy ranked from most preferred to least preferred.</p>
+      </div>
+
+      <div class="row g-4 align-items-center mb-5">
+        <div class="col-lg-5 text-center">
+          <div class="p-3 bg-white rounded-4 shadow-sm border">
+            <img src="page4_images/approach.png" alt="Waste Hierarchy Pyramid" class="img-fluid rounded-3" style="max-height: 360px; object-fit: contain;">
+            <div class="small text-muted mt-2">Ranked Hierarchy: Most Preferred (Top) to Least Preferred (Bottom)</div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="d-flex flex-column gap-3">
+            <!-- 1. Prevention -->
+            <div class="hierarchy-step-card hierarchy-step-1">
+              <div class="d-flex align-items-start gap-3">
+                <div class="hierarchy-badge" style="background: #ecfdf5; color: #059669;">1</div>
+                <div>
+                  <h4 class="h6 font-weight-bold mb-1 text-success">Prevention (Most Preferred)</h4>
+                  <p class="small text-muted mb-0">
+                    Stop waste before it exists. Choose digital over print, avoid single-use packaging, and invest in durable, repairable goods.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Minimisation -->
+            <div class="hierarchy-step-card hierarchy-step-2">
+              <div class="d-flex align-items-start gap-3">
+                <div class="hierarchy-badge" style="background: #d1fae5; color: #047857;">2</div>
+                <div>
+                  <h4 class="h6 font-weight-bold mb-1" style="color: #047857;">Minimisation</h4>
+                  <p class="small text-muted mb-0">
+                    When prevention isn't possible, reduce volume or toxicity by buying in bulk, choosing concentrated cleaners, and opting for non-toxic materials.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Reuse -->
+            <div class="hierarchy-step-card hierarchy-step-3">
+              <div class="d-flex align-items-start gap-3">
+                <div class="hierarchy-badge" style="background: #e0f2fe; color: #0284c7;">3</div>
+                <div>
+                  <h4 class="h6 font-weight-bold mb-1 text-primary">Reuse</h4>
+                  <p class="small text-muted mb-0">
+                    Extend product lifespans before discarding: repurpose glass jars for food storage, convert old textiles into rags, and mend furniture.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Recycling -->
+            <div class="hierarchy-step-card hierarchy-step-4">
+              <div class="d-flex align-items-start gap-3">
+                <div class="hierarchy-badge" style="background: #fef3c7; color: #b45309;">4</div>
+                <div>
+                  <h4 class="h6 font-weight-bold mb-1" style="color: #b45309;">Recycling</h4>
+                  <p class="small text-muted mb-0">
+                    Reprocess clean materials (metals, PET bottles, clean cardboard) into new goods, diverting them from landfills and saving raw materials.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Energy Recovery -->
+            <div class="hierarchy-step-card hierarchy-step-5">
+              <div class="d-flex align-items-start gap-3">
+                <div class="hierarchy-badge" style="background: #ffedd5; color: #c2410c;">5</div>
+                <div>
+                  <h4 class="h6 font-weight-bold mb-1" style="color: #c2410c;">Energy Recovery</h4>
+                  <p class="small text-muted mb-0">
+                    Extract usable energy (biogas from organic waste or waste-to-energy plants) from items that cannot be mechanically recycled.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Disposal -->
+            <div class="hierarchy-step-card hierarchy-step-6">
+              <div class="d-flex align-items-start gap-3">
+                <div class="hierarchy-badge" style="background: #fee2e2; color: #dc2626;">6</div>
+                <div>
+                  <h4 class="h6 font-weight-bold mb-1 text-danger">Disposal (Least Preferred)</h4>
+                  <p class="small text-muted mb-0">
+                    Landfilling or incineration without energy recovery. Responsible for methane emissions and leachate; must be minimized at all costs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="waste-box" onclick="toggleSteps(this)">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpPStVvUSBF6W30DiWOBsJsEKGSjkqwrB8Aw&s" alt="Metal Waste">
-      <div class="label">Metal Waste</div>
-      <div class="steps">
-        <ul>
-          <li>Separate ferrous and non-ferrous metals.</li>
-          <li>Rinse food cans and scrap metal.</li>
-          <li>Take to local scrap yards or recycling centers.</li>
-          <li>Avoid landfilling valuable metal resources.</li>
-        </ul>
+  <!-- Guide According to the Nature of Waste Section -->
+  <section class="py-5" style="background: white; border-top: 1px solid var(--border-light);">
+    <div class="container">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge-eco badge-eco-blue mb-2">Category Protocols</span>
+        <h2 class="h2 font-weight-bold">Guide According to Nature of Waste</h2>
+        <p class="text-muted small">Click any waste stream card to toggle responsible sorting and handling steps.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- 1. Bio-Waste -->
+        <div class="col-md-6 col-lg-4">
+          <div class="waste-box-card" onclick="toggleWasteCard(this)">
+            <div class="waste-icon">🍌</div>
+            <h4 class="h5 font-weight-bold mb-1">Bio-Waste & Organics</h4>
+            <span class="badge-eco badge-eco-green align-self-start mb-2">Compostable</span>
+            <p class="text-muted small mb-0">Food scraps, garden cuttings, vegetable peelings, and compostable solids.</p>
+            <div class="steps">
+              <ul class="ps-3 mb-0">
+                <li class="mb-1">Separate food and garden waste from all plastic or general trash.</li>
+                <li class="mb-1">Use aerated compost bins or bokashi systems for rapid decomposition.</li>
+                <li class="mb-1">Never mix with plastic bags, stickers, or metal twist-ties.</li>
+                <li>Use mature compost as organic fertilizer for gardens and houseplants.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Plastic Waste -->
+        <div class="col-md-6 col-lg-4">
+          <div class="waste-box-card" onclick="toggleWasteCard(this)">
+            <div class="waste-icon">🧴</div>
+            <h4 class="h5 font-weight-bold mb-1">Plastic Waste</h4>
+            <span class="badge-eco badge-eco-blue align-self-start mb-2">Recyclable (PET/HDPE)</span>
+            <p class="text-muted small mb-0">Beverage containers, detergent jugs, clean packaging, and hard plastics.</p>
+            <div class="steps">
+              <ul class="ps-3 mb-0">
+                <li class="mb-1">Rinse out remaining residues and allow items to dry.</li>
+                <li class="mb-1">Check resin codes: Type 1 (PET) & Type 2 (HDPE) have the highest recycling value.</li>
+                <li class="mb-1">Avoid single-use checkout bags and unrecyclable multi-layer pouches.</li>
+                <li>Drop off rigid plastics in curbside dry recycling bins.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. E-Waste -->
+        <div class="col-md-6 col-lg-4">
+          <div class="waste-box-card" onclick="toggleWasteCard(this)">
+            <div class="waste-icon">💻</div>
+            <h4 class="h5 font-weight-bold mb-1">Electronic Waste (E-Waste)</h4>
+            <span class="badge-eco badge-eco-purple align-self-start mb-2">Hazardous / Special</span>
+            <p class="text-muted small mb-0">Old smartphones, chargers, laptops, circuit boards, and appliances.</p>
+            <div class="steps">
+              <ul class="ps-3 mb-0">
+                <li class="mb-1">Never throw e-waste or batteries into regular household garbage.</li>
+                <li class="mb-1">Factory-reset devices and wipe personal data prior to drop-off.</li>
+                <li class="mb-1">Explore repair, refurbished trade-in, or donation before recycling.</li>
+                <li>Hand over only to authorized, certified e-waste collection centers.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Metal Waste -->
+        <div class="col-md-6 col-lg-4">
+          <div class="waste-box-card" onclick="toggleWasteCard(this)">
+            <div class="waste-icon">🥫</div>
+            <h4 class="h5 font-weight-bold mb-1">Metal Waste</h4>
+            <span class="badge-eco badge-eco-amber align-self-start mb-2">Infinitely Recyclable</span>
+            <p class="text-muted small mb-0">Aluminium soda cans, tin food cans, foil, scrap metal, and hardware.</p>
+            <div class="steps">
+              <ul class="ps-3 mb-0">
+                <li class="mb-1">Rinse food residue from soup cans and beverage tins.</li>
+                <li class="mb-1">Leave pull-tabs attached to aluminium cans to prevent littering.</li>
+                <li class="mb-1">Separate ferrous (magnetic) from non-ferrous metals if required locally.</li>
+                <li>Drop off at dry recycling or take larger scrap to local buyback yards.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Glass Waste -->
+        <div class="col-md-6 col-lg-4">
+          <div class="waste-box-card" onclick="toggleWasteCard(this)">
+            <div class="waste-icon">🫙</div>
+            <h4 class="h5 font-weight-bold mb-1">Glass Waste</h4>
+            <span class="badge-eco badge-eco-green align-self-start mb-2">100% Recyclable</span>
+            <p class="text-muted small mb-0">Condiment jars, beverage bottles, olive oil bottles, and glass vessels.</p>
+            <div class="steps">
+              <ul class="ps-3 mb-0">
+                <li class="mb-1">Rinse clean to eliminate odor and insect attraction.</li>
+                <li class="mb-1">Remove metal lids and recycle them in the metal bin.</li>
+                <li class="mb-1">Never mix window panes, mirrors, pyrex, or ceramics with bottle glass.</li>
+                <li>Place intact jars into color-segregated or designated glass collection bins.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Hazardous & Sanitary -->
+        <div class="col-md-6 col-lg-4">
+          <div class="waste-box-card" onclick="toggleWasteCard(this)">
+            <div class="waste-icon">⚠️</div>
+            <h4 class="h5 font-weight-bold mb-1">Hazardous & Chemical Waste</h4>
+            <span class="badge-eco badge-eco-amber align-self-start mb-2">Special Depots</span>
+            <p class="text-muted small mb-0">Paint cans, pesticides, expired medicines, fluorescent tubes, and solvents.</p>
+            <div class="steps">
+              <ul class="ps-3 mb-0">
+                <li class="mb-1">Never pour toxic chemicals, paint, or used motor oil down household drains.</li>
+                <li class="mb-1">Keep chemicals in original labeled containers to prevent dangerous reactions.</li>
+                <li class="mb-1">Return expired prescription medicines to authorized pharmacy drop-boxes.</li>
+                <li>Deliver paints and solvents to designated municipal hazardous waste drives.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="../EcoSteps.html" class="btn-eco-outline">
+          ← Back to Homepage
+        </a>
       </div>
     </div>
-    <div class="waste-box" onclick="toggleSteps(this)">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPUjoBUdLDBADq-PghPQVgASK0sphcDLxHQw&s" alt="Glass Waste">
-  <div class="label">Glass Waste</div>
-  <div class="steps">
-    <ul>
-      <li>Rinse the glass containers to remove residue.</li>
-      <li>Separate by color if your locality requires it.</li>
-      <li>Avoid including broken glass, mirrors, or ceramics.</li>
-      <li>Place in a designated glass recycling bin or drop-off center.</li>
-    </ul>
-  </div>
-</div>
+  </section>
 
+  <!-- Global Footer -->
+  <footer class="eco-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="brand-badge" style="width: 32px; height: 32px; font-size: 0.9rem;">🌿</span>
+            <span class="h4 text-white font-weight-bold mb-0">EcoSteps</span>
+          </div>
+          <p class="text-muted small pe-lg-4">
+            EcoSteps is a community-first digital initiative dedicated to making sustainability actionable, enjoyable, and accessible for everyone.
+          </p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5>Guides</h5>
+          <ul class="list-unstyled">
+            <li><a href="../shopping.html">Sustainable Shopping</a></li>
+            <li><a href="../water.html">Water Conservation</a></li>
+            <li><a href="../energy.html">Energy Efficiency</a></li>
+            <li><a href="abhina_page4.html">Waste Management</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5>Interactive Tools</h5>
+          <ul class="list-unstyled">
+            <li><a href="../EcoSteps.html#impact-calculator">Impact Calculator</a></li>
+            <li><a href="../shopping.html">My Eco Kit</a></li>
+            <li><a href="#wasteSearchInput">What Goes Where?</a></li>
+            <li><a href="../water.html">Water Footprint</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <h5>Weekly Eco Action Digest</h5>
+          <p class="text-muted small">Receive 1 practical green micro-habit every Monday directly to your inbox.</p>
+          <form class="newsletter-form d-flex gap-2">
+            <input type="email" class="form-control footer-newsletter-input" placeholder="Enter your email..." required>
+            <button type="submit" class="btn-eco-primary btn-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="pt-4 border-top border-secondary border-opacity-25 text-center text-muted small">
+        <p class="mb-0">© 2026 EcoSteps Initiative. Built for everyday environmental stewardship.</p>
+      </div>
     </div>
-  </div>
-</div>
-</div>
-<div class="line"></div>
+  </footer>
 
-<script>
-document.querySelectorAll('.waste-box').forEach(box => {
-  box.addEventListener('click', () => {
-
-    document.querySelectorAll('.waste-box').forEach(otherBox => {
-      if (otherBox !== box) {
-        otherBox.classList.remove('open');
-      }
-    });
-
-    box.classList.toggle('open');
-  });
-});
-
-</script>
-
-
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/waste-sorter.js"></script>
+  <script>
+    function toggleWasteCard(card) {
+      card.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>

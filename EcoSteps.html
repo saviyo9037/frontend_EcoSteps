@@ -1,224 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" >
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <title>EcoSteps</title>
-
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: #fff;
-      margin: 0;
-      overflow-x: hidden;
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      background: url('image/first_page_background.png') no-repeat center center fixed;
-      background-size: cover;
-      background-attachment: fixed;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 1;
-    }
-
-    .hero-content {
-      z-index: 2;
-      animation: fadeInUp 1s ease-out;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    }
-
-    .lead {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      max-width: 600px;
-    }
-
-    .logo-container {
-      margin-bottom: 2rem;
-      animation: bounceIn 1.5s ease-out;
-    }
-
-    @keyframes bounceIn {
-      0% {
-        opacity: 0;
-        transform: scale(0.3);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1.05);
-      }
-      70% {
-        transform: scale(0.9);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .navbar {
-      background: rgba(0, 123, 85, 0.9) !important;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .card-section {
-      padding: 5rem 0;
-      background: rgba(255,255,255,0.95);
-      color: #333;
-    }
-
-    .card {
-      border: none;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-      overflow: hidden;
-      background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    }
-
-    .card-body {
-      padding: 2rem;
-    }
-
-    .btn-success {
-      background: linear-gradient(45deg, #28a745, #20c997);
-      border: none;
-      border-radius: 25px;
-      padding: 0.75rem 2rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .btn-success:hover {
-      transform: scale(1.05);
-      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      .lead {
-        font-size: 1rem;
-      }
-      .card-body {
-        padding: 1.5rem;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoSteps — Everyday Sustainability for a Greener Tomorrow</title>
+  <meta name="description" content="Discover actionable ways to reduce plastic waste, conserve water, cut home energy costs, and master recycling with EcoSteps.">
+  
+  <!-- Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/png" href="image/echosteps.png">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">EcoSteps</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+
+  <!-- Top Sticky Navigation -->
+  <nav class="navbar navbar-expand-lg eco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="EcoSteps.html">
+        <span class="brand-badge">🌿</span>
+        <span>EcoSteps</span>
+      </a>
+      <div class="d-flex align-items-center d-lg-none gap-2">
+        <div class="nav-streak-pill">🔥 <span>3 Day Streak</span></div>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item active"><a class="nav-link" href="EcoSteps.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="shopping.html">Shopping</a></li>
           <li class="nav-item"><a class="nav-link" href="water.html">Water</a></li>
           <li class="nav-item"><a class="nav-link" href="energy.html">Energy</a></li>
           <li class="nav-item"><a class="nav-link" href="waste/abhina_page4.html">Waste</a></li>
         </ul>
+        <div class="ms-lg-3 d-none d-lg-block">
+          <div class="nav-streak-pill" title="Daily Sustainability Streak">🔥 <span>3 Day Streak</span></div>
+        </div>
       </div>
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>EcoSteps: Everyday Sustainability</h1>
-      <p class="lead">Empowering simple actions for a sustainable future</p>
-      <div class="logo-container">
-        <img src="image/echosteps.png" class="img-fluid rounded shadow" alt="EcoSteps Logo" style="max-width: 300px;">
+  <!-- Hero Section -->
+  <header class="page-hero text-center position-relative">
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="badge-eco badge-eco-green mb-3">
+        🌱 Everyday Sustainability Platform
+      </div>
+      <h1 class="display-4 font-weight-bold mb-3">
+        Small Steps Today.<br>
+        <span style="background: linear-gradient(135deg, #059669 0%, #0284c7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+          Measurable Change Tomorrow.
+        </span>
+      </h1>
+      <p class="lead mb-4">
+        Empowering households, students, and communities with practical habits, interactive carbon tools, and smart circular living guides.
+      </p>
+      
+      <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+        <a href="#action-pillars" class="btn-eco-primary">
+          Explore Action Guides ↓
+        </a>
+        <a href="#impact-calculator" class="btn-eco-outline">
+          Calculate Your Impact 🧮
+        </a>
+      </div>
+
+      <!-- Hero Visual Banner Card -->
+      <div class="col-lg-10 mx-auto">
+        <div class="glass-panel p-3 p-md-4 shadow-lg text-center" style="border-radius: 24px;">
+          <div class="row align-items-center">
+            <div class="col-md-4 mb-3 mb-md-0">
+              <img src="image/echosteps.png" alt="EcoSteps Core Emblem" class="img-fluid rounded-4 shadow-sm" style="max-height: 180px; object-fit: contain;">
+            </div>
+            <div class="col-md-8 text-md-start">
+              <span class="badge-eco badge-eco-blue mb-2">Our Guiding Principle</span>
+              <h3 class="h4 font-weight-bold mb-2">Individual Action Drives Collective Healing</h3>
+              <p class="text-muted small mb-0">
+                You don't need to be 100% zero-waste overnight. Millions of people adopting imperfect, thoughtful green practices generate vastly greater impact than a handful doing it perfectly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Community Impact Ticker Section -->
+  <section class="py-5" style="background: white; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <div class="impact-ticker-card">
+            <div class="ticker-icon" style="background: #ecfdf5; color: #059669;">🧴</div>
+            <div class="ticker-value">142K+</div>
+            <div class="ticker-label">Plastic Items Avoided</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="impact-ticker-card">
+            <div class="ticker-icon" style="background: #e0f2fe; color: #0284c7;">💧</div>
+            <div class="ticker-value">3.8M</div>
+            <div class="ticker-label">Liters Water Saved</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="impact-ticker-card">
+            <div class="ticker-icon" style="background: #fef3c7; color: #d97706;">⚡</div>
+            <div class="ticker-value">86.2K</div>
+            <div class="ticker-label">kWh Clean Energy Spared</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="impact-ticker-card">
+            <div class="ticker-icon" style="background: #f3e8ff; color: #7e22ce;">♻️</div>
+            <div class="ticker-value">42.5T</div>
+            <div class="ticker-label">Waste Diverted from Landfills</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="card-section">
-    <div class="container">
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body d-flex flex-column justify-content-center text-center">
-              <h5 class="card-title">Sustainable Shopping</h5>
-              <p class="card-text">Discover eco-friendly products and ethical shopping practices.</p>
-              <a href="shopping.html" class="btn btn-success mt-auto">Explore</a>
+  <!-- 4 Core Pillars Section -->
+  <section id="action-pillars" class="py-5">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge-eco badge-eco-green mb-2">Pillars of Sustainability</span>
+        <h2 class="h1 font-weight-bold">Four Areas Where You Make the Difference</h2>
+        <p class="text-muted">Explore targeted, practical guides created to help you effortlessly transition into sustainable daily routines.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- 1. Sustainable Shopping -->
+        <div class="col-md-6 col-lg-3">
+          <div class="eco-card">
+            <div class="p-4" style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+              <span class="badge-eco badge-eco-green mb-2">Conscious Consumerism</span>
+              <div style="font-size: 2.5rem; margin: 0.5rem 0;">🛍️</div>
+              <h3 class="h4 font-weight-bold mb-1">Sustainable Shopping</h3>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <p class="text-muted small mb-4">
+                Discover durable, eco-friendly product swaps, eliminate single-use plastics, and track your personal sustainable kit.
+              </p>
+              <ul class="list-unstyled small text-muted mb-4">
+                <li class="mb-2">✓ BPA-free reusable alternatives</li>
+                <li class="mb-2">✓ Lifecycle carbon savings</li>
+                <li class="mb-2">✓ Interactive shopping kit tracker</li>
+              </ul>
+              <a href="shopping.html" class="btn-eco-primary mt-auto text-center justify-content-center">
+                Explore Shopping →
+              </a>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body d-flex flex-column justify-content-center text-center">
-              <h5 class="card-title">Water Conservation</h5>
-              <p class="card-text">Learn simple ways to save water in your daily life.</p>
-              <a href="water.html" class="btn btn-success mt-auto">Explore</a>
+
+        <!-- 2. Water Conservation -->
+        <div class="col-md-6 col-lg-3">
+          <div class="eco-card">
+            <div class="p-4" style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);">
+              <span class="badge-eco badge-eco-blue mb-2">Watershed Stewardship</span>
+              <div style="font-size: 2.5rem; margin: 0.5rem 0;">💧</div>
+              <h3 class="h4 font-weight-bold mb-1">Water Conservation</h3>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <p class="text-muted small mb-4">
+                Learn high-impact conservation practices for bathrooms, kitchens, and gardens with our live water savings calculator.
+              </p>
+              <ul class="list-unstyled small text-muted mb-4">
+                <li class="mb-2">✓ Room-by-room conservation guides</li>
+                <li class="mb-2">✓ Interactive water footprint tool</li>
+                <li class="mb-2">✓ Rainwater harvesting basics</li>
+              </ul>
+              <a href="water.html" class="btn-eco-primary mt-auto text-center justify-content-center">
+                Save Water →
+              </a>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body d-flex flex-column justify-content-center text-center">
-              <h5 class="card-title">Energy Saving</h5>
-              <p class="card-text">Tips to reduce energy consumption and live sustainably.</p>
-              <a href="energy.html" class="btn btn-success mt-auto">Explore</a>
+
+        <!-- 3. Energy Saving -->
+        <div class="col-md-6 col-lg-3">
+          <div class="eco-card">
+            <div class="p-4" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);">
+              <span class="badge-eco badge-eco-amber mb-2">Clean Energy & Efficiency</span>
+              <div style="font-size: 2.5rem; margin: 0.5rem 0;">⚡</div>
+              <h3 class="h4 font-weight-bold mb-1">Energy Saving</h3>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <p class="text-muted small mb-4">
+                Cut monthly utility bills and reduce power grid reliance with appliance efficiency estimators and smart phantom load checks.
+              </p>
+              <ul class="list-unstyled small text-muted mb-4">
+                <li class="mb-2">✓ Appliance power cost estimator</li>
+                <li class="mb-2">✓ Phantom load elimination tips</li>
+                <li class="mb-2">✓ LED transition guide & ROI</li>
+              </ul>
+              <a href="energy.html" class="btn-eco-primary mt-auto text-center justify-content-center">
+                Conserve Energy →
+              </a>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body d-flex flex-column justify-content-center text-center">
-              <h5 class="card-title">Waste Management</h5>
-              <p class="card-text">Proper waste handling and recycling practices.</p>
-              <a href="waste/abhina_page4.html" class="btn btn-success mt-auto">Explore</a>
+
+        <!-- 4. Waste Management -->
+        <div class="col-md-6 col-lg-3">
+          <div class="eco-card">
+            <div class="p-4" style="background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);">
+              <span class="badge-eco badge-eco-purple mb-2">Circular Living</span>
+              <div style="font-size: 2.5rem; margin: 0.5rem 0;">♻️</div>
+              <h3 class="h4 font-weight-bold mb-1">Waste Management</h3>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <p class="text-muted small mb-4">
+                Master the 6-tier waste hierarchy and use the instant "What Goes Where?" search engine for hassle-free recycling & composting.
+              </p>
+              <ul class="list-unstyled small text-muted mb-4">
+                <li class="mb-2">✓ "What Goes Where?" smart sorter</li>
+                <li class="mb-2">✓ Safe e-waste & bio-waste tips</li>
+                <li class="mb-2">✓ 6Rs waste hierarchy visualizer</li>
+              </ul>
+              <a href="waste/abhina_page4.html" class="btn-eco-primary mt-auto text-center justify-content-center">
+                Manage Waste →
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Interactive Impact Calculator Section -->
+  <section id="impact-calculator" class="py-5" style="background: #f0fdf4;">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5">
+          <span class="badge-eco badge-eco-green mb-2">Interactive Household Tool</span>
+          <h2 class="h1 font-weight-bold mb-3">Calculate Your Annual Eco & Cost Savings</h2>
+          <p class="text-muted mb-4">
+            Adjust the sliders to reflect your household habits. See the estimated greenhouse gas reductions and money saved over the course of one full year.
+          </p>
+
+          <!-- Daily Eco Challenge Widget -->
+          <div class="eco-card p-4 border-0 shadow-sm" style="background: white;">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <span style="font-size: 1.8rem;">🎯</span>
+              <div>
+                <h4 class="h6 font-weight-bold mb-0">Daily Sustainability Challenge</h4>
+                <span class="small text-muted">Earn streaks by logging daily actions</span>
+              </div>
+            </div>
+            <p class="small text-muted mb-3 mt-2">
+              <strong>Today's Mission:</strong> Unplug idle phone chargers and microwave displays before going to bed.
+            </p>
+            <button id="completeActionBtn" class="btn-eco-primary btn-sm w-100 justify-content-center">
+              Complete Today's Action 🌿
+            </button>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="calculator-box">
+            <h3 class="h4 font-weight-bold mb-4 d-flex justify-content-between align-items-center">
+              <span>Personal Impact Simulator</span>
+              <span class="badge-eco badge-eco-blue">Real-Time</span>
+            </h3>
+
+            <!-- Slider 1 -->
+            <div class="calc-slider-group">
+              <label>
+                <span>🧴 Plastic bottles avoided daily:</span>
+                <span class="slider-val" id="valBottles">2 / day</span>
+              </label>
+              <input type="range" id="sliderBottles" min="0" max="10" value="2" step="1">
+            </div>
+
+            <!-- Slider 2 -->
+            <div class="calc-slider-group">
+              <label>
+                <span>🚿 Minutes reduced from daily shower:</span>
+                <span class="slider-val" id="valShower">4 mins</span>
+              </label>
+              <input type="range" id="sliderShower" min="0" max="15" value="4" step="1">
+            </div>
+
+            <!-- Slider 3 -->
+            <div class="calc-slider-group">
+              <label>
+                <span>💡 Traditional bulbs switched to LED:</span>
+                <span class="slider-val" id="valBulbs">6 bulbs</span>
+              </label>
+              <input type="range" id="sliderBulbs" min="0" max="20" value="6" step="1">
+            </div>
+
+            <!-- Slider 4 -->
+            <div class="calc-slider-group">
+              <label>
+                <span>🌱 Food waste composted weekly:</span>
+                <span class="slider-val" id="valCompost">3 kg / wk</span>
+              </label>
+              <input type="range" id="sliderCompost" min="0" max="15" value="3" step="1">
+            </div>
+
+            <!-- Results Banner -->
+            <div class="calc-result-badge mt-4">
+              <div class="row g-3">
+                <div class="col-6 col-md-3">
+                  <div class="small opacity-75">Annual CO₂ Offset</div>
+                  <div class="h3 font-weight-bold mb-0 text-white" id="resultCO2">375 kg</div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="small opacity-75">Estimated $ Saved</div>
+                  <div class="h3 font-weight-bold mb-0 text-white" id="resultSavings">$1,194</div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="small opacity-75">Water Conserved</div>
+                  <div class="h3 font-weight-bold mb-0 text-white" id="resultWater">13,870 L</div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="small opacity-75">Tree Equivalent</div>
+                  <div class="h3 font-weight-bold mb-0 text-white" id="resultTrees">17.8 trees</div>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-muted small text-center mt-3 mb-0">
+              *Estimates based on EPA emissions factors and average household utility tariffs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="eco-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="brand-badge" style="width: 32px; height: 32px; font-size: 0.9rem;">🌿</span>
+            <span class="h4 text-white font-weight-bold mb-0">EcoSteps</span>
+          </div>
+          <p class="text-muted small pe-lg-4">
+            EcoSteps is a community-first digital initiative dedicated to making sustainability actionable, enjoyable, and accessible for everyone.
+          </p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5>Guides</h5>
+          <ul class="list-unstyled">
+            <li><a href="shopping.html">Sustainable Shopping</a></li>
+            <li><a href="water.html">Water Conservation</a></li>
+            <li><a href="energy.html">Energy Efficiency</a></li>
+            <li><a href="waste/abhina_page4.html">Waste Management</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5>Interactive Tools</h5>
+          <ul class="list-unstyled">
+            <li><a href="#impact-calculator">Impact Calculator</a></li>
+            <li><a href="shopping.html">My Eco Kit</a></li>
+            <li><a href="waste/abhina_page4.html">What Goes Where?</a></li>
+            <li><a href="water.html">Water Footprint</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <h5>Weekly Eco Action Digest</h5>
+          <p class="text-muted small">Receive 1 practical green micro-habit every Monday directly to your inbox.</p>
+          <form class="newsletter-form d-flex gap-2">
+            <input type="email" class="form-control footer-newsletter-input" placeholder="Enter your email..." required>
+            <button type="submit" class="btn-eco-primary btn-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="pt-4 border-top border-secondary border-opacity-25 text-center text-muted small">
+        <p class="mb-0">© 2026 EcoSteps Initiative. Built for everyday environmental stewardship.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/calculator.js"></script>
 </body>
 </html>

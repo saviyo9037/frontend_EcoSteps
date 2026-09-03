@@ -1,106 +1,106 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f7f9fb;
-  color: #1a1a1a;
-  margin: 0;
-  padding: 0;
-}
+/* Waste Management Hub Specific Enhancements */
 
-.image-container {
-  margin: 0;
+.waste-hero-img-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
   position: relative;
-  width: 100%;
+  box-shadow: var(--shadow-lg);
+  max-height: 380px;
 }
 
-.image-container img {
+.waste-hero-img-wrap img {
   width: 100%;
-  height: 60vh;
+  height: 380px;
   object-fit: cover;
   display: block;
 }
 
-.line {
-  background-color: rgba(25, 135, 84, 1);
-  width: 100%;
-  height: 3vh;
-}
-
-.line2 {
-  background-color: rgba(25, 135, 84, 1);
-  width: 100%;
-  height: 2vh;
-}
-
-h2 {
-  color: rgba(25, 135, 84, 1);
-  margin-top: 40px;
-  text-align: center;
-  font-size: 2em;
-}
-
-h3 {
-  color: rgba(25, 135, 84, 1);
-  margin-top: 40px;
-  font-size: 1.5em;
-}
-
-.container {
-  margin: 2cm auto;
-  max-width: 1200px;
-  padding: 0 10px;
-}
-
-.guide-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.waste-box {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  width: 250px;
-  padding: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.waste-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(6, 78, 59, 0.85) 100%);
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.5rem;
+  color: white;
+}
+
+.hierarchy-step-card {
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  padding: 1.5rem;
+  transition: var(--transition);
+  position: relative;
+}
+
+.hierarchy-step-card:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-md);
+}
+
+.hierarchy-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  flex-shrink: 0;
 }
 
-.waste-box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.hierarchy-step-1 { border-left: 5px solid #059669; }
+.hierarchy-step-2 { border-left: 5px solid #10b981; }
+.hierarchy-step-3 { border-left: 5px solid #0ea5e9; }
+.hierarchy-step-4 { border-left: 5px solid #f59e0b; }
+.hierarchy-step-5 { border-left: 5px solid #d97706; }
+.hierarchy-step-6 { border-left: 5px solid #ef4444; }
+
+.waste-box-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  padding: 1.75rem;
+  transition: var(--transition);
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.waste-box img {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  margin-bottom: 10px;
+.waste-box-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
 }
 
-.label {
-  font-weight: 600;
-  font-size: 16px;
-  margin-top: 10px;
-  color: #198754;
+.waste-box-card .waste-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-.steps {
+.waste-box-card .steps {
   display: none;
-  text-align: left;
-  margin-top: 12px;
-  font-size: 14px;
-  color: #444;
-  line-height: 1.5;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.88rem;
+  color: var(--text-muted);
 }
 
-.waste-box.open .steps {
+.waste-box-card.open .steps {
   display: block;
 }
 
+.stat-pill-box {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}

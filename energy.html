@@ -1,281 +1,530 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ecosteps: Energy Saving</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energy Saving Guide | EcoSteps</title>
+  <meta name="description" content="Discover actionable methods to eliminate vampire power, optimize appliance usage, and dramatically lower your household electricity bills.">
+
+  <!-- Stylesheets -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/png" href="image/echosteps.png">
   <style>
-    *{
-      list-style: none;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
-      color: #333;
-      overflow-x: hidden;
-    }
-
-    header {
-      background-color: #2e8b57;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-    }
-
-    section {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .items{
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .category {
-
-      background-color: #ffffff;
-      border-left: 6px solid #2e8b57;
-      padding: 15px 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    .energy-category-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: var(--transition);
       cursor: pointer;
-      width: 250px;
-      height: 300px;
     }
-    .home{
-      background-image: url(https://thearchitecturedesigns.com/wp-content/uploads/2023/12/Architectural-Tips-to-Consider-for-an-Energy-Efficient-Home-4-1024x731.jpeg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
+    .energy-category-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+      border-color: var(--accent-amber);
     }
- .kitchen{
-  background-image: url(https://decorcrowd.com/wp-content/uploads/2024/04/Different_color_temperatures_of_LED_lights_for_various_kitchen_zones-683x1024.webp);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
- }
-
- .laundry{
-      background-image: url(https://thumbs.dreamstime.com/b/modern-laundry-room-energy-efficient-washing-machine-design-bright-laundry-area-features-washing-machine-wind-363855726.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
- }
- .office{
-   background-image: url(https://www.energyaustralia.com.au/sites/default/files/styles/full_image/public/2017-01/energy-saving-tips-your-office.jpg?itok=7Slnhd7Y);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
- }
- .travel{
-      background-image: url(https://welcomeenergy.co.uk/wp-content/uploads/2020/06/energy.png);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
- }
-    .category h2 {
-      margin-top: 0;
-      color: #2e8b57;
+    .energy-header {
+      padding: 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid transparent;
+      user-select: none;
     }
-
-    .tips {
-      display: none;
-      padding-top: 10px;
-      background: floralwhite;
-      padding-right: 9px;
-      padding-bottom: 4px;
-      border-radius: 5px;
-      border: 1px solid gray;
+    .energy-category-card.open .energy-header {
+      border-bottom: 1px solid var(--border-light);
     }
-
-    .outlier {
-      background-image: url(https://thumbs.dreamstime.com/z/solar-panel-factory-rooftop-wind-turbine-beautiful-blue-sky-background-290024579.jpg?w=576);
-      border-left: 6px solid #d9534f;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: #2e8b57;
-      color: white;
-      margin-top: 30px;
-    }
-
-    .search-box {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    input[type="text"] {
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
-      font-size: 16px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    #scrollTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      display: none;
-      background-color: #2e8b57;
-      color: white;
-      border: none;
-      padding: 10px 15px;
+    .toggle-indicator {
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
-      font-size: 18px;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      background: #fef3c7;
+      color: #b45309;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      transition: transform 0.25s ease;
     }
-
-    @media screen and (max-width: 600px) {
-      section {
-        padding: 15px;
-      }
+    .energy-category-card.open .toggle-indicator {
+      transform: rotate(180deg);
+      background: #f59e0b;
+      color: white;
+    }
+    .tip-list-body {
+      display: none;
+      padding: 1.5rem;
+      background: #fffbeb;
+    }
+    .energy-category-card.open .tip-list-body {
+      display: block;
+    }
+    .energy-tip-item {
+      padding: 0.75rem 1rem;
+      background: white;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.75rem;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
     }
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="EcoSteps.html">EcoSteps</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+
+  <!-- Top Sticky Navigation -->
+  <nav class="navbar navbar-expand-lg eco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="EcoSteps.html">
+        <span class="brand-badge">🌿</span>
+        <span>EcoSteps</span>
+      </a>
+      <div class="d-flex align-items-center d-lg-none gap-2">
+        <div class="nav-streak-pill">🔥 <span>3 Day Streak</span></div>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="EcoSteps.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="shopping.html">Shopping</a></li>
           <li class="nav-item"><a class="nav-link" href="water.html">Water</a></li>
           <li class="nav-item active"><a class="nav-link" href="energy.html">Energy</a></li>
           <li class="nav-item"><a class="nav-link" href="waste/abhina_page4.html">Waste</a></li>
         </ul>
+        <div class="ms-lg-3 d-none d-lg-block">
+          <div class="nav-streak-pill" title="Daily Sustainability Streak">🔥 <span>3 Day Streak</span></div>
+        </div>
       </div>
     </div>
   </nav>
 
-  <header>
-    <h1>Ecosteps: Energy Saving</h1>
-    <p>Simple energy-saving actions for a better tomorrow</p>
+  <!-- Hero Section -->
+  <header class="page-hero text-center position-relative">
+    <div class="container position-relative" style="z-index: 2;">
+      <span class="badge-eco badge-eco-amber mb-3">⚡ Clean Power & Efficiency</span>
+      <h1 class="display-5 font-weight-bold mb-3">Energy Saving Guide</h1>
+      <p class="lead mb-4">
+        Lowering energy consumption reduces greenhouse gas emissions at power plants while keeping more money in your pocket every month.
+      </p>
+
+      <!-- Search Box -->
+      <div class="search-filter-wrapper mb-3">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="energySearchInput" placeholder="Search energy saving tips (e.g. LED, AC, laundry, phantom)...">
+      </div>
+    </div>
   </header>
 
-  <section>
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Search energy-saving tips...">
-    </div>
+  <!-- Interactive Appliance Estimator Banner -->
+  <section class="py-4" style="background: white; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+    <div class="container">
+      <div class="p-4 p-md-5 rounded-4 shadow-sm" style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1px solid #fde68a;">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-5">
+            <span class="badge-eco badge-eco-amber mb-2">Interactive Tool</span>
+            <h3 class="h4 font-weight-bold text-dark mb-2">Appliance Power Draw & Cost Estimator</h3>
+            <p class="text-muted small mb-3">
+              Select an appliance and adjust daily operational hours to see estimated electrical draw and annual running cost.
+            </p>
 
-    <div class="item">
-      <div class="items">
-            <div class="category home" onclick="toggleTips(this)">
-      <h2>🏠 Home </h2>
-      <ul class="tips">
-        <li>💡 Switch to LED Bulbs</li>
-        <li>🔌 Unplug Idle Electronics</li>
-        <li>🪟 Use Natural Light</li>
-        <li>🛏️ Turn Off Lights When Not Needed</li>
-        <li>🧊 Insulate Your Home</li>
-      </ul>
-    </div>
+            <div class="mb-3">
+              <label class="small font-weight-bold mb-1">Select Appliance:</label>
+              <select class="form-select form-select-sm" id="applianceSelect">
+                <option value="1500">Air Conditioner (1.5 Ton) ~ 1500 Watts</option>
+                <option value="60">Old Incandescent Bulb ~ 60 Watts</option>
+                <option value="9">Modern LED Bulb ~ 9 Watts</option>
+                <option value="200">Desktop Gaming PC ~ 200 Watts</option>
+                <option value="45">Laptop Computer ~ 45 Watts</option>
+                <option value="1200">Electric Space Heater ~ 1200 Watts</option>
+                <option value="150">Refrigerator (Running average) ~ 150 Watts</option>
+                <option value="30">Standby Electronics / Vampire Draw ~ 30 Watts</option>
+              </select>
+            </div>
 
-    <div class="category kitchen" onclick="toggleTips(this)">
-      <h2>🍳 Kitchen</h2>
-      <ul class="tips">
-        <li>🍽️ Use Microwave Instead of Oven</li>
-        <li>🔥 Cover Pots While Cooking</li>
-        <li>🧊 Use Energy-Efficient Appliances</li>
-      </ul>
-    </div>
-    <div class="category laundry" onclick="toggleTips(this)">
-      <h2>🧺 Laundry </h2>
-      <ul class="tips">
-        <li>🧼 Wash with Cold Water</li>
-        <li>🌞 Line Dry Clothes</li>
-        <li>🧽 Clean Dryer Lint Filter Regularly</li>
-      </ul>
-    </div>
+            <div class="mb-3">
+              <label class="d-flex justify-content-between small font-weight-bold mb-1">
+                <span>Daily Usage Hours:</span>
+                <span id="hoursDisplay" class="text-warning font-weight-bold">6 hours</span>
+              </label>
+              <input type="range" class="form-range" id="hoursInput" min="1" max="24" value="6" step="1">
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="row g-3 text-center">
+              <div class="col-4">
+                <div class="bg-white p-3 rounded-3 shadow-sm">
+                  <div class="text-muted small">Daily Consumption</div>
+                  <div class="h3 font-weight-bold text-dark mb-0" id="calcDailyKWh">9.0 kWh</div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="bg-white p-3 rounded-3 shadow-sm">
+                  <div class="text-muted small">Monthly Cost*</div>
+                  <div class="h3 font-weight-bold text-warning mb-0" id="calcMonthlyCost">$43.20</div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="bg-white p-3 rounded-3 shadow-sm">
+                  <div class="text-muted small">Annual Cost*</div>
+                  <div class="h3 font-weight-bold text-danger mb-0" id="calcAnnualCost">$525.60</div>
+                </div>
+              </div>
+            </div>
+            <div class="text-muted small text-center mt-2">
+              *Calculated at standard tariff rate of $0.16 per kWh.
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="items">
-            <div class="category office" onclick="toggleTips(this)">
-      <h2>🧑‍💻 Office / Study Room</h2>
-      <ul class="tips">
-        <li>🖥️ Use Power Saving Mode</li>
-        <li>🔌 Smart Power Strips</li>
-      </ul>
     </div>
-
-    <div class="category travel" onclick="toggleTips(this)">
-      <h2>🚗 Travel</h2>
-      <ul class="tips">
-        <li>🚶‍♀️ Walk or Bike Short Distances</li>
-        <li>🚙 Carpool When Possible</li>
-        <li>🚌 Use Public Transport</li>
-      </ul>
-    </div>
-
-    <a href="https://www.youtube.com/watch?v=DvkabsJn6uo" target="_blank" style="text-decoration: none;">
-      <div class="category outlier">
-        <h2>🚫 Outlier Tip</h2>
-        <p>💨 <strong>Install a Rooftop Wind Turbine</strong> — While renewable, it's costly, impractical for daily life, and doesn't fit the goal of simple, everyday actions.</p>
-      </div>
-    </a>
-
-    </div>
-      </div>
-
-
-
   </section>
 
-  <footer>
-    &copy; 2025 Ecosteps | Built for a greener future
+  <!-- Zone-by-Zone Guide Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge-eco badge-eco-amber mb-2">Actionable Guides</span>
+        <h2 class="h2 font-weight-bold">Household Energy Efficiency by Zone</h2>
+        <p class="text-muted small">Click any card below to expand high-impact tips, smart behavioral adjustments, and ROI timelines.</p>
+      </div>
+
+      <div class="row g-4" id="energyCategoryContainer">
+        <!-- 1. Home Living -->
+        <div class="col-lg-6 energy-card-wrapper">
+          <div class="energy-category-card open">
+            <div class="energy-header">
+              <div class="d-flex align-items-center gap-3">
+                <span style="font-size: 1.8rem;">🏠</span>
+                <div>
+                  <h3 class="h5 font-weight-bold mb-0">Living Spaces & Lighting</h3>
+                  <span class="badge-eco badge-eco-amber mt-1">Payback: Immediate</span>
+                </div>
+              </div>
+              <div class="toggle-indicator">▼</div>
+            </div>
+            <div class="tip-list-body">
+              <div class="energy-tip-item">
+                <span class="text-warning font-weight-bold">💡</span>
+                <div>
+                  <strong>Switch 100% to Quality LEDs:</strong> LED bulbs consume 75–85% less electricity than incandescent bulbs and last up to 15 times longer.
+                </div>
+              </div>
+              <div class="energy-tip-item">
+                <span class="text-warning font-weight-bold">🔌</span>
+                <div>
+                  <strong>Kill "Vampire / Phantom" Loads:</strong> Electronics plugged in on standby continuously draw power. Connect entertainment and workstation setups to smart power strips.
+                </div>
+              </div>
+              <div class="energy-tip-item">
+                <span class="text-warning font-weight-bold">🪟</span>
+                <div>
+                  <strong>Weatherstrip Doors & Windows:</strong> Caulking drafts around drafty windows keeps conditioned air inside and prevents HVAC compressors from overworking.
+                </div>
+              </div>
+              <div class="energy-tip-item">
+                <span class="text-warning font-weight-bold">☀️</span>
+                <div>
+                  <strong>Harness Daylighting:</strong> Position desks and reading nooks near windows to rely entirely on free natural sunlight during daytime hours.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Kitchen -->
+        <div class="col-lg-6 energy-card-wrapper">
+          <div class="energy-category-card">
+            <div class="energy-header">
+              <div class="d-flex align-items-center gap-3">
+                <span style="font-size: 1.8rem;">🍳</span>
+                <div>
+                  <h3 class="h5 font-weight-bold mb-0">Kitchen & Cooking</h3>
+                  <span class="badge-eco badge-eco-amber mt-1">Cuts Kitchen Bills 20%</span>
+                </div>
+              </div>
+              <div class="toggle-indicator">▼</div>
+            </div>
+            <div class="tip-list-body">
+              <div class="energy-tip-item">
+                <span class="text-warning font-weight-bold">🍲</span>
+                <div>
+                  <strong>Cook with Covered Pots:</strong> Putting lids on pots traps heat, allowing food to boil up to 30% faster while using significantly less gas or induction electricity.
+                </div>
+              </div>
+              <div class="energy-tip-item">
+                <span class="text-warning font-weight-bold">⚡</span>
+                <div>
+                  <strong>Use Microwaves & Air Fryers for Small Portions:</strong> Reheating in a microwave or toaster oven consumes up to 70% less energy than preheating a full-sized 2,500W oven.
+                </div>
+              </div>
+              <div class="energy-tip-item">
+                <span class="text-warning font-weight-bold">🧊</span>
+                <div>
+                  <strong>Maintain Refrigerator Coils & Door Seals:</strong> Vacuum dust off refrigerator condenser coils twice a year to maintain maximum compressor efficiency.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Laundry -->
+        <div class="col-lg-6 energy-card-wrapper">
+          <div class="energy-category-card">
+            <div class="energy-header">
+              <div class="d-flex align-items-center gap-3">
+                <span style="font-size: 1.8rem;">🧺</span>
+                <div>
+                  <h3 class="h5 font-weight-bold mb-0">Laundry & Clothes Care</h3>
+                  <span class="badge-eco badge-eco-green mt-1">High Thermal Savings</span>
+                </div>
+              </div>
+              <div class="toggle-indicator">▼</div>
+            </div>
+            <div class="tip-list-body">
+              <div class="energy-tip-item">
+                <span class="text-warning font-weight-bold">🧼</span>
+                <div>
+                  <strong>Wash Loads in Cold Water:</strong> Up to 90% of the energy consumed by a washing machine goes solely into heating water. Modern detergents clean just as effectively in cold wash.
+                </div>
+              </div>
+              <div class="energy-tip-item">
+                <span class="text-warning font-weight-bold">🌞</span>
+                <div>
+                  <strong>Line Dry Clothes Naturally:</strong> Electric tumble dryers draw 2,000 to 5,000 Watts. Utilizing an indoor drying rack or outdoor clothesline preserves clothes and costs zero dollars.
+                </div>
+              </div>
+              <div class="energy-tip-item">
+                <span class="text-warning font-weight-bold">🧽</span>
+                <div>
+                  <strong>Clean Dryer Lint Filters Every Cycle:</strong> If you must use a dryer, clean the screen filter before every load to maintain unobstructed airflow and fast drying times.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Office / Study -->
+        <div class="col-lg-6 energy-card-wrapper">
+          <div class="energy-category-card">
+            <div class="energy-header">
+              <div class="d-flex align-items-center gap-3">
+                <span style="font-size: 1.8rem;">💻</span>
+                <div>
+                  <h3 class="h5 font-weight-bold mb-0">Home Office & Remote Work</h3>
+                  <span class="badge-eco badge-eco-blue mt-1">Smart Computing</span>
+                </div>
+              </div>
+              <div class="toggle-indicator">▼</div>
+            </div>
+            <div class="tip-list-body">
+              <div class="energy-tip-item">
+                <span class="text-warning font-weight-bold">🖥️</span>
+                <div>
+                  <strong>Enable Sleep & Power-Saver Profiles:</strong> Configure monitors to sleep after 5 minutes of inactivity rather than running full brightness screensavers.
+                </div>
+              </div>
+              <div class="energy-tip-item">
+                <span class="text-warning font-weight-bold">🔋</span>
+                <div>
+                  <strong>Choose Laptops Over Bulky Towers:</strong> Laptop computers are specifically engineered for battery conservation and consume 80% less electricity than desktop PC towers.
+                </div>
+              </div>
+              <div class="energy-tip-item">
+                <span class="text-warning font-weight-bold">🔌</span>
+                <div>
+                  <strong>Master Power Switch:</strong> Turn off Wi-Fi routers or auxiliary monitors at night if you are away on travel or sleeping.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Mobility -->
+        <div class="col-lg-6 energy-card-wrapper">
+          <div class="energy-category-card">
+            <div class="energy-header">
+              <div class="d-flex align-items-center gap-3">
+                <span style="font-size: 1.8rem;">🚗</span>
+                <div>
+                  <h3 class="h5 font-weight-bold mb-0">Sustainable Travel & Mobility</h3>
+                  <span class="badge-eco badge-eco-green mt-1">Fossil Fuel Reduction</span>
+                </div>
+              </div>
+              <div class="toggle-indicator">▼</div>
+            </div>
+            <div class="tip-list-body">
+              <div class="energy-tip-item">
+                <span class="text-warning font-weight-bold">🚶</span>
+                <div>
+                  <strong>Walk or Bike Short Trips (< 2 km):</strong> Cold engine starts generate the highest emissions per kilometer. Short trips on foot or bicycle produce zero carbon and keep you fit.
+                </div>
+              </div>
+              <div class="energy-tip-item">
+                <span class="text-warning font-weight-bold">🚙</span>
+                <div>
+                  <strong>Proper Tire Inflation:</strong> Keeping vehicle tires inflated to factory specifications improves fuel mileage by up to 3% and lengthens tire lifespan.
+                </div>
+              </div>
+              <div class="energy-tip-item">
+                <span class="text-warning font-weight-bold">🚌</span>
+                <div>
+                  <strong>Combine Errands & Carpool:</strong> Cluster weekly shopping into a single trip rather than multiple independent cold starts.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Strategic Perspective: Rooftop Wind vs Solar & Efficiency -->
+        <div class="col-lg-6 energy-card-wrapper">
+          <div class="energy-category-card" style="border-left: 4px solid #ef4444;">
+            <div class="energy-header">
+              <div class="d-flex align-items-center gap-3">
+                <span style="font-size: 1.8rem;">🌬️</span>
+                <div>
+                  <h3 class="h5 font-weight-bold mb-0">Rethinking Impractical Interventions</h3>
+                  <span class="badge-eco badge-eco-amber mt-1">Realistic ROI</span>
+                </div>
+              </div>
+              <div class="toggle-indicator">▼</div>
+            </div>
+            <div class="tip-list-body">
+              <div class="energy-tip-item" style="border-left: 3px solid #ef4444;">
+                <div>
+                  <strong>Why Micro Rooftop Wind Turbines Rarely Work in Cities:</strong> Urban environments suffer from turbulent, unpredictable wind currents. Small residential turbines are costly, generate minimal wattage, cause structural vibrations, and require frequent mechanical maintenance.
+                </div>
+              </div>
+              <div class="energy-tip-item" style="border-left: 3px solid var(--primary);">
+                <div>
+                  <strong>The Pragmatic Solution:</strong> Invest in high-efficiency rooftop photovoltaic (PV) solar panels or basic thermal insulation. Solar panels contain no moving parts and produce consistent, silent clean energy.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="EcoSteps.html" class="btn-eco-outline">
+          ← Back to Homepage
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="eco-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="brand-badge" style="width: 32px; height: 32px; font-size: 0.9rem;">🌿</span>
+            <span class="h4 text-white font-weight-bold mb-0">EcoSteps</span>
+          </div>
+          <p class="text-muted small pe-lg-4">
+            EcoSteps is a community-first digital initiative dedicated to making sustainability actionable, enjoyable, and accessible for everyone.
+          </p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5>Guides</h5>
+          <ul class="list-unstyled">
+            <li><a href="shopping.html">Sustainable Shopping</a></li>
+            <li><a href="water.html">Water Conservation</a></li>
+            <li><a href="energy.html">Energy Efficiency</a></li>
+            <li><a href="waste/abhina_page4.html">Waste Management</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5>Interactive Tools</h5>
+          <ul class="list-unstyled">
+            <li><a href="EcoSteps.html#impact-calculator">Impact Calculator</a></li>
+            <li><a href="shopping.html">My Eco Kit</a></li>
+            <li><a href="waste/abhina_page4.html">What Goes Where?</a></li>
+            <li><a href="water.html">Water Footprint</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <h5>Weekly Eco Action Digest</h5>
+          <p class="text-muted small">Receive 1 practical green micro-habit every Monday directly to your inbox.</p>
+          <form class="newsletter-form d-flex gap-2">
+            <input type="email" class="form-control footer-newsletter-input" placeholder="Enter your email..." required>
+            <button type="submit" class="btn-eco-primary btn-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="pt-4 border-top border-secondary border-opacity-25 text-center text-muted small">
+        <p class="mb-0">© 2026 EcoSteps Initiative. Built for everyday environmental stewardship.</p>
+      </div>
+    </div>
   </footer>
 
-  <button id="scrollTop" onclick="scrollToTop()">⬆️</button>
-
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
   <script>
-    function toggleTips(categoryDiv) {
-      const tips = categoryDiv.querySelector(".tips");
-      const toggleIcon = categoryDiv.querySelector("span");
-      const isOpen = tips.style.display === "block";
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Accordion Toggle Logic
+      const cards = document.querySelectorAll(".energy-category-card");
+      cards.forEach(card => {
+        const header = card.querySelector(".energy-header");
+        header.addEventListener("click", () => {
+          card.classList.toggle("open");
+        });
+      });
 
-      tips.style.display = isOpen ? "none" : "block";
-      toggleIcon.textContent = isOpen ? "➕" : "➖";
-    }
+      // 2. Real-time Appliance Estimator
+      const applianceSelect = document.getElementById("applianceSelect");
+      const hoursInput = document.getElementById("hoursInput");
+      const hoursDisplay = document.getElementById("hoursDisplay");
+      const calcDailyKWh = document.getElementById("calcDailyKWh");
+      const calcMonthlyCost = document.getElementById("calcMonthlyCost");
+      const calcAnnualCost = document.getElementById("calcAnnualCost");
 
-    document.getElementById("searchInput").addEventListener("input", function () {
-      const filter = this.value.toLowerCase();
-      const tipsLists = document.querySelectorAll(".tips li");
+      function updateApplianceCalc() {
+        const watts = parseFloat(applianceSelect.value);
+        const hours = parseFloat(hoursInput.value);
+        hoursDisplay.innerText = `${hours} hours`;
 
-      tipsLists.forEach(function (tip) {
-        const text = tip.textContent.toLowerCase();
-        tip.style.display = text.includes(filter) ? "" : "none";
+        const dailyKWh = (watts * hours) / 1000;
+        const ratePerKWh = 0.16; // $0.16/kWh
+        const monthlyCost = dailyKWh * 30 * ratePerKWh;
+        const annualCost = dailyKWh * 365 * ratePerKWh;
+
+        calcDailyKWh.innerText = `${dailyKWh.toFixed(1)} kWh`;
+        calcMonthlyCost.innerText = `$${monthlyCost.toFixed(2)}`;
+        calcAnnualCost.innerText = `$${annualCost.toFixed(2)}`;
+      }
+
+      applianceSelect.addEventListener("change", updateApplianceCalc);
+      hoursInput.addEventListener("input", updateApplianceCalc);
+      updateApplianceCalc();
+
+      // 3. Search Filter Logic
+      const searchInput = document.getElementById("energySearchInput");
+      const cardWrappers = document.querySelectorAll(".energy-card-wrapper");
+
+      searchInput.addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        cardWrappers.forEach(wrapper => {
+          const card = wrapper.querySelector(".energy-category-card");
+          const text = card.textContent.toLowerCase();
+          if (text.includes(query)) {
+            wrapper.style.display = "";
+            if (query.length > 1) {
+              card.classList.add("open");
+            }
+          } else {
+            wrapper.style.display = "none";
+          }
+        });
       });
     });
-
-    window.onscroll = function () {
-      const scrollBtn = document.getElementById("scrollTop");
-      scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
-    };
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
